@@ -16,7 +16,7 @@ const signInFormSchema = yup.object().shape({
 
 export default function SignIn() {
   const { register, handleSubmit, formState } = useForm({
-    resolver: yupResolver(signInFormSchema)
+    resolver: yupResolver(signInFormSchema),
   });
 
   const { errors } = formState;
@@ -46,6 +46,7 @@ export default function SignIn() {
             error={errors.email}
             {...register("email")}
           />
+
           <Input
             name="password"
             type="password"
